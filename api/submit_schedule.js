@@ -7,7 +7,7 @@ module.exports = async (req, res) => {
   if (req.method === 'POST') {
     try {
       await client.connect();
-      const database = client.db('Cluster0');  // Use 'Cluster0' as your database name
+      const database = client.db('Cluster0');
       const collection = database.collection('appointments');
 
       const { name, email, phone } = req.body;
@@ -16,7 +16,7 @@ module.exports = async (req, res) => {
 
       res.status(200).json({ message: 'Appointment scheduled successfully' });
     } catch (error) {
-      console.error(error);
+      console.error('Error connecting to MongoDB:', error);
       res.status(500).json({ error: 'Failed to schedule appointment' });
     } finally {
       await client.close();
