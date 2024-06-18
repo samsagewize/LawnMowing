@@ -12,7 +12,7 @@
             background: url('DALL·E 2024-06-16 15.48.26 - A realistic scene with perfectly cut, lush green grass at the bottom of the image. The sky above is clear and blue, with a few scattered, fluffy white.webp') no-repeat center center fixed;
             background-size: cover;
             color: #333;
-            height: 100vh;
+            height: 100%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -69,12 +69,21 @@
             text-align: center;
         }
 
+        .form-container, .calendar-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            flex-direction: column;
+        }
+
         form {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
             display: inline-block;
+            margin-bottom: 20px;
         }
 
         form input {
@@ -100,30 +109,62 @@
             background: #45a049;
         }
 
-        .form-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100%;
+        .slogan {
+            font-size: 1.5em;
+            color: #4CAF50;
+            margin-bottom: 20px;
         }
 
-        .contact-info {
+        .calendar {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
             display: inline-block;
-            text-align: center;
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
         }
 
         .contact-info a {
             color: #4CAF50;
             text-decoration: none;
-            font-size: 1.5em;
+            font-weight: bold;
         }
 
         .contact-info a:hover {
             text-decoration: underline;
+        }
+
+        .examples-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+
+        .example {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            border-radius: 50%;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            margin: 10px;
+            width: 150px;
+            height: 150px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .example img {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
         }
     </style>
 </head>
@@ -145,21 +186,38 @@
             <h2>Our Services</h2>
             <p>We offer professional lawn mowing services to keep your lawn looking its best.</p>
             <div class="form-container">
+                <div class="slogan">"Transforming your outdoor spaces into beautiful landscapes!"</div>
                 <form action="/api/submit_schedule" method="post">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <input type="tel" name="phone" placeholder="Your Phone Number" required>
                     <button type="submit">Submit</button>
                 </form>
+                <div class="calendar-container">
+                    <div class="calendar" id="current-date"></div>
+                </div>
+                <div class="contact-info">
+                    <p>If interested in landscaping around your home, please go to <a href="contact.html">Contact</a>.</p>
+                </div>
             </div>
-            <div class="contact-info">
-                <p>Get started with our services right away!</p>
-                <p><a href="tel:512-822-8492">Call or Text: 512-822-8492</a></p>
+            <div class="examples-container">
+                <div class="example"><img src="example1.jpg" alt="Example 1"></div>
+                <div class="example"><img src="example2.jpg" alt="Example 2"></div>
+                <div class="example"><img src="example3.jpg" alt="Example 3"></div>
+                <div class="example"><img src="example4.jpg" alt="Example 4"></div>
             </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Castelan Landscaping</p>
     </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const dateElement = document.getElementById('current-date');
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            const today = new Date().toLocaleDateString(undefined, options);
+            dateElement.innerText = today;
+        });
+    </script>
 </body>
 </html>
