@@ -68,6 +68,63 @@
             padding: 10px;
             text-align: center;
         }
+
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background: #45a049;
+        }
+
+        .form-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+            text-align: center;
+        }
+
+        .contact-info a {
+            color: #4CAF50;
+            text-decoration: none;
+            font-size: 1.5em;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -78,7 +135,7 @@
             <ul>
                 <li><a href="#">Home</a></li>
                 <li><a href="#">Gallery</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="contact.html">Contact</a></li>
                 <li><a href="#">Schedule</a></li>
             </ul>
         </nav>
@@ -87,6 +144,18 @@
         <section>
             <h2>Our Services</h2>
             <p>We offer professional lawn mowing services to keep your lawn looking its best.</p>
+            <div class="form-container">
+                <form action="/api/submit_schedule" method="post">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+            <div class="contact-info">
+                <p>Get started with our services right away!</p>
+                <p><a href="tel:512-822-8492">Call or Text: 512-822-8492</a></p>
+            </div>
         </section>
     </main>
     <footer>
