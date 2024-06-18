@@ -166,7 +166,16 @@
             height: auto;
             border-radius: 50%;
         }
+
+        #thank-you-message {
+            display: none;
+            font-size: 2em;
+            color: #4CAF50;
+            margin-top: 20px;
+        }
     </style>
+    <!-- Include Confetti.js Library -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.3.4/dist/confetti.browser.min.js"></script>
 </head>
 <body>
     <header>
@@ -187,7 +196,7 @@
             <p>We offer professional lawn mowing services to keep your lawn looking its best.</p>
             <div class="form-container">
                 <div class="slogan">"Transforming your outdoor spaces into beautiful landscapes!"</div>
-                <form action="/api/submit_schedule" method="post">
+                <form id="schedule-form">
                     <input type="text" name="name" placeholder="Your Name" required>
                     <input type="email" name="email" placeholder="Your Email" required>
                     <input type="tel" name="phone" placeholder="Your Phone Number" required>
@@ -199,6 +208,7 @@
                 <div class="contact-info">
                     <p>If interested in landscaping around your home, please go to <a href="contact.html">Contact</a>.</p>
                 </div>
+                <div id="thank-you-message">Thank you! We will contact you soon.</div>
             </div>
             <div class="examples-container">
                 <div class="example"><img src="example1.jpg" alt="Example 1"></div>
@@ -217,6 +227,34 @@
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             const today = new Date().toLocaleDateString(undefined, options);
             dateElement.innerText = today;
+
+            const form = document.getElementById('schedule-form');
+            form.addEventListener('submit', async function(event) {
+                event.preventDefault();
+                const formData = new FormData(form);
+                const data = Object.fromEntries(formData.entries());
+
+                try {
+                    const response = await fetch('/api/submit_schedule', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    });
+
+                    if (response.ok) {
+                        // Display confetti and thank you message
+                        confetti();
+                        document.getElementById('thank-you-message').style.display = 'block';
+                        form.reset();
+                    } else {
+                        console.error('Error submitting form');
+                    }
+                } catch (error) {
+                    console.error('Error:', error);
+                }
+            });
         });
     </script>
 </body>
