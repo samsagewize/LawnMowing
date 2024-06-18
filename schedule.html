@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule - Castelan Landscaping</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('DALL·E 2024-06-16 15.48.26 - A realistic scene with perfectly cut, lush green grass at the bottom of the image. The sky above is clear and blue, with a few scattered, fluffy white.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #4CAF50;
+        }
+
+        nav {
+            position: relative;
+        }
+
+        .menu-btn {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            background: #45a049;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 50px;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: background 0.3s ease;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+        .dropdown-content a {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+
+        form input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        form button {
+            background: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            border-radius: 5px;
+        }
+
+        form button:hover {
+            background: #45a049;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logoo.webp" alt="Logo" class="logo">
+        <h1>Castelan Landscaping</h1>
+        <nav>
+            <div class="dropdown">
+                <button class="menu-btn">Menu</button>
+                <div class="dropdown-content">
+                    <a href="home.html">Home</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="schedule.html">Schedule</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Schedule an Appointment</h2>
+            <form action="submit_schedule.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Castelan Landscaping</p>
+    </footer>
+</body>
+</html>
