@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('DALL·E 2024-06-16 15.48.26 - A realistic scene with perfectly cut, lush green grass at the bottom of the image. The sky above is clear and blue, with a few scattered, fluffy white.webp') no-repeat center center fixed;
+            background-size: cover;
+            color: #333;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            text-align: center;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 50px;
+            height: 50px;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: #4CAF50;
+            padding: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 10px;
+        }
+
+        nav ul li {
+            margin: 10px 0;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 1.2em;
+            padding: 5px;
+        }
+
+        main {
+            flex: 1;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 10px;
+            text-align: center;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logoo.webp" alt="Logo" class="logo">
+        <h1>Castelan Landscaping</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Gallery</h2>
+            <div class="gallery">
+                <img src="image000002.JPG" alt="Gallery Image 1">
+                <img src="image000001 (1).JPG" alt="Gallery Image 2">
+                <img src="image000003.JPG" alt="Gallery Image 3">
+                <img src="example4.jpg" alt="Gallery Image 4">
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Castelan Landscaping</p>
+    </footer>
+</body>
+</html>
