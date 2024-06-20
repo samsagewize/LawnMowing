@@ -185,10 +185,10 @@
         <h1>Castelan Landscaping</h1>
         <nav>
             <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Gallery</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="#">Schedule</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
             </ul>
         </nav>
     </header>
@@ -197,6 +197,13 @@
             <h2>Our Services</h2>
             <p>We offer professional lawn mowing services to keep your lawn looking its best.</p>
             <div class="slogan">"Transforming your outdoor spaces into beautiful landscapes!"</div>
+            <form id="schedule-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <input type="tel" name="phone" placeholder="Your Phone Number" required>
+                <button type="submit">Submit</button>
+            </form>
             <div class="calendar-container">
                 <div class="calendar" id="current-date"></div>
             </div>
