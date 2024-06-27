@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Schedule an Appointment</title>
+    <title>About The Team</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: url('DALL·E 2024-06-16 15.48.26 - A realistic scene with perfectly cut, lush green grass at the bottom of the image. The sky above is clear and blue, with a few scattered, fluffy white.webp') no-repeat center center fixed;
+            background: url('image4.jpeg') no-repeat center center fixed;
             background-size: cover;
             color: #333;
             height: 100%;
@@ -72,36 +72,13 @@
             text-align: center;
         }
 
-        form {
+        .info-box {
             background: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
             display: inline-block;
             margin-bottom: 20px;
-        }
-
-        form input, form textarea {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        form button {
-            background: #4CAF50;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            font-size: 1.2em;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            border-radius: 5px;
-        }
-
-        form button:hover {
-            background: #45a049;
         }
 
         .slogan {
@@ -159,57 +136,23 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="gallery.html">Gallery</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="schedule.html">About</a></li>
             </ul>
         </nav>
     </header>
     <main>
         <section>
-            <h2>Schedule an Appointment</h2>
-            <form id="schedule-form">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" placeholder="Your Message" required></textarea>
-                <input type="tel" name="phone" placeholder="Your Phone Number" required>
-                <button type="submit">Submit</button>
-            </form>
-            <div id="thank-you-message">Thank you! We will contact you soon.</div>
+            <h2>About Us</h2>
+            <div class="info-box">
+                <p>MONDAY - SATURDAY 7AM- 5PM Available AUSTIN TX AREA!</p>
+                <p>LANDSCAPING SINCE 2017</p>
+                <p>OWNER JORGE CASTELAN</p>
+                <p>PLEASE GO TO CONTACT TO BOOK AN APPOINTMENT</p>
+            </div>
         </section>
     </main>
     <footer>
         <p>&copy; 2024 Castelan Landscaping</p>
     </footer>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const form = document.getElementById('schedule-form');
-            form.addEventListener('submit', async function(event) {
-                event.preventDefault();
-                const formData = new FormData(form);
-                const data = Object.fromEntries(formData.entries());
-
-                try {
-                    console.log('Submitting form data:', data);
-                    const response = await fetch('/api/submit_schedule', {
-                        method: 'POST',
-                        headers: {
-                            'Content-Type': 'application/json'
-                        },
-                        body: JSON.stringify(data)
-                    });
-
-                    if (response.ok) {
-                        // Display confetti and thank you message
-                        confetti();
-                        document.getElementById('thank-you-message').style.display = 'block';
-                        form.reset();
-                    } else {
-                        console.error('Error submitting form:', response.statusText);
-                    }
-                } catch (error) {
-                    console.error('Error:', error);
-                }
-            });
-        });
-    </script>
 </body>
 </html>
